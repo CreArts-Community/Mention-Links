@@ -1,0 +1,22 @@
+// ╔══════════════════════════╦═════════════════════════════════════════════════════════════════════════════[─]═[□]═[×]═╗
+// ║ Settings                 ║ VSC Extension Settings                                                                  ║
+// ╚══════════════════════════╩═════════════════════════════════════════════════════════════════════════════════════════╝
+
+{
+  // Live Sass Compiler
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.autoprefix": ["defaults"],
+  "liveSassCompile.settings.showOutputWindowOn": "Warning",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": null
+    }
+  ],
+  "liveSassCompile.settings.excludeList": ["/.backup/**", "/.github/**", "/.vscode/**"],
+
+  // Prettier
+  "prettier.printWidth": 200
+}

@@ -1,0 +1,8 @@
+{
+  "name": "CreArts | Mention-Links",
+  "version": "1.0.0",
+  "author": "CorellanStoma#1996",
+  "description": "Mention-Links changes the appearance of links.",
+  "license": "MIT",
+  "theme": "clients/vizality.css"
+}
