@@ -4,12 +4,12 @@
 
 // Context Icon (Normal)
 @mixin link-normal($link, $content, $background-normal, $background-hover, $icon: "") {
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
     font-size: 0;
     line-height: 0;
     text-decoration: none;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::after {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::after {
     content: var(--open-link) " #{$content}";
     font-size: 11pt !important;
     line-height: 10px !important;
@@ -22,7 +22,7 @@
     font-weight: 500;
     padding-left: 20px;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:hover::after {
+  .messageContent__21e69 a[href^="#{$link}"]:hover::after {
     //content: "(" attr(href) ")";
     background-color: #{$background-hover};
     color: rgba(255, 255, 255, 1);
@@ -33,7 +33,7 @@
     max-width: 20px;
     min-width: 20px;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
     position: absolute;
     content: "";
     background: rgba(255, 255, 255, 0.8);
@@ -44,11 +44,11 @@
     -webkit-mask: var(--icon) center/contain no-repeat;
     mask: var(--icon) center/contain no-repeat;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]):hover::before {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]):hover::before {
     background: rgba(255, 255, 255, 1);
   }
   @if $icon != "" {
-    .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+    .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
       --icon: url("#{$icon}");
       height: 14px;
       width: 14px;
@@ -56,19 +56,19 @@
       margin-left: 2px;
     }
   } @else {
-    .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+    .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
       --icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg width='100%25' height='100%25' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Crect id='Filled' x='0' y='0' width='24' height='24' style='fill:none;'/%3E%3Cg id='Filled1' serif:id='Filled'%3E%3Cg id='Context'%3E%3Cpath id='copy_message_link' d='M10.473,13.527c0.444,0.423 0.444,1.116 -0,1.538c-0.423,0.423 -1.116,0.423 -1.538,0c-2.098,-2.101 -2.098,-5.556 -0,-7.657l3.834,-3.834c2.101,-2.099 5.556,-2.099 7.657,-0c2.099,2.101 2.099,5.556 0,7.657l-1.613,1.614c0.01,-0.888 -0.13,-1.776 -0.434,-2.621l0.509,-0.52c0.613,-0.607 0.959,-1.434 0.959,-2.296c-0,-0.863 -0.346,-1.69 -0.959,-2.296c-0.606,-0.613 -1.433,-0.959 -2.296,-0.959c-0.862,0 -1.689,0.346 -2.296,0.959l-3.823,3.823c-0.613,0.606 -0.959,1.434 -0.959,2.296c0,0.862 0.346,1.69 0.959,2.296Zm3.054,-4.592c0.423,-0.423 1.116,-0.423 1.538,-0c2.098,2.101 2.098,5.556 0,7.657l-3.834,3.834c-2.101,2.099 -5.556,2.099 -7.657,0c-2.099,-2.101 -2.099,-5.556 -0,-7.657l1.613,-1.614c-0.01,0.888 0.13,1.776 0.434,2.632l-0.509,0.509c-0.613,0.607 -0.959,1.434 -0.959,2.296c0,0.863 0.346,1.69 0.959,2.296c0.606,0.613 1.433,0.959 2.296,0.959c0.862,-0 1.689,-0.346 2.296,-0.959l3.823,-3.823c0.613,-0.606 0.959,-1.434 0.959,-2.296c-0,-0.862 -0.346,-1.69 -0.959,-2.296c-0.212,-0.199 -0.333,-0.478 -0.333,-0.769c-0,-0.291 0.121,-0.57 0.333,-0.769Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
   }
 }
 
 @mixin link-gift($link, $content, $background-normal, $background-hover, $icon: "") {
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
     font-size: 0;
     line-height: 0;
     text-decoration: none;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::after {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::after {
     content: var(--claim-gift) " #{$content}";
     font-size: 11pt !important;
     line-height: 10px !important;
@@ -81,7 +81,7 @@
     font-weight: 500;
     padding-left: 20px;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:hover::after {
+  .messageContent__21e69 a[href^="#{$link}"]:hover::after {
     //content: "(" attr(href) ")";
     background-color: #{$background-hover};
     color: rgba(255, 255, 255, 1);
@@ -92,7 +92,7 @@
     max-width: 20px;
     min-width: 20px;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
     position: absolute;
     content: "";
     background: rgba(255, 255, 255, 0.8);
@@ -103,11 +103,11 @@
     -webkit-mask: var(--icon) center/contain no-repeat;
     mask: var(--icon) center/contain no-repeat;
   }
-  .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]):hover::before {
+  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]):hover::before {
     background: rgba(255, 255, 255, 1);
   }
   @if $icon != "" {
-    .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+    .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
       --icon: url("#{$icon}");
       height: 14px;
       width: 14px;
@@ -115,7 +115,7 @@
       margin-left: 2px;
     }
   } @else {
-    .messageContent-2t3eCI a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
+    .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
       --icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg width='100%25' height='100%25' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Crect id='Filled' x='0' y='0' width='24' height='24' style='fill:none;'/%3E%3Cg id='Filled1' serif:id='Filled'%3E%3Cg id='Context'%3E%3Cpath id='copy_message_link' d='M10.473,13.527c0.444,0.423 0.444,1.116 -0,1.538c-0.423,0.423 -1.116,0.423 -1.538,0c-2.098,-2.101 -2.098,-5.556 -0,-7.657l3.834,-3.834c2.101,-2.099 5.556,-2.099 7.657,-0c2.099,2.101 2.099,5.556 0,7.657l-1.613,1.614c0.01,-0.888 -0.13,-1.776 -0.434,-2.621l0.509,-0.52c0.613,-0.607 0.959,-1.434 0.959,-2.296c-0,-0.863 -0.346,-1.69 -0.959,-2.296c-0.606,-0.613 -1.433,-0.959 -2.296,-0.959c-0.862,0 -1.689,0.346 -2.296,0.959l-3.823,3.823c-0.613,0.606 -0.959,1.434 -0.959,2.296c0,0.862 0.346,1.69 0.959,2.296Zm3.054,-4.592c0.423,-0.423 1.116,-0.423 1.538,-0c2.098,2.101 2.098,5.556 0,7.657l-3.834,3.834c-2.101,2.099 -5.556,2.099 -7.657,0c-2.099,-2.101 -2.099,-5.556 -0,-7.657l1.613,-1.614c-0.01,0.888 0.13,1.776 0.434,2.632l-0.509,0.509c-0.613,0.607 -0.959,1.434 -0.959,2.296c0,0.863 0.346,1.69 0.959,2.296c0.606,0.613 1.433,0.959 2.296,0.959c0.862,-0 1.689,-0.346 2.296,-0.959l3.823,-3.823c0.613,-0.606 0.959,-1.434 0.959,-2.296c-0,-0.862 -0.346,-1.69 -0.959,-2.296c-0.212,-0.199 -0.333,-0.478 -0.333,-0.769c-0,-0.291 0.121,-0.57 0.333,-0.769Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
   }
