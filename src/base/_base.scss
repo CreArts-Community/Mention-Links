@@ -121,11 +121,18 @@
   }
 }
 
-@mixin link-github($link) {
+@mixin link-github($link, $content, $background-normal, $background-hover, $icon: "", $user: "", $repo:"") {
   $userRepo: str-slice(str-slice($link, 8), 1, -1);
   $userRepoParts: str-split($userRepo, "/");
-  $user: nth($userRepoParts, 1);
-  $repo: nth($userRepoParts, 2);
+
+  @if length($userRepoParts) >= 2 {
+    $user: nth($userRepoParts, 1);
+    $repo: nth($userRepoParts, 2);
+  } @else {
+    // Handle the case where there are not enough elements in the list
+    $user: "User";
+    $repo: "Repo";
+  }
 
   .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
     font-size: 0;
