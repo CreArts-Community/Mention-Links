@@ -121,74 +121,6 @@
   }
 }
 
-@mixin link-github($link) {
-  $userRepo: str-slice(str-slice($link, 8), 1, -1);
-  $userRepoParts: str-split($userRepo, "/");
-
-  $user: null;
-  $repo: null;
-
-  @if length($userRepoParts) >= 2 {
-    $user: nth($userRepoParts, 1);
-    $repo: nth($userRepoParts, 2);
-  } @else {
-    // Handle the case where there are not enough elements in the list
-    $user: "User";
-    $repo: "Repo";
-  }
-
-  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]) {
-    font-size: 0;
-    line-height: 0;
-    text-decoration: none;
-  }
-  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::after {
-    content: "#{$user} > #{$repo}";
-    font-size: 11pt !important;
-    line-height: 10px !important;
-    color: rgba(255, 255, 255, 0.8);
-    background: #18171740;
-    transition: background-color 50ms ease-out, color 50ms ease-out;
-    cursor: pointer;
-    border-radius: 3px;
-    padding: 0 2px;
-    font-weight: 500;
-    padding-left: 20px;
-  }
-  .messageContent__21e69 a[href^="#{$link}"]:hover::after {
-    //content: "(" attr(href) ")";
-    background-color: #181717;
-    color: rgba(255, 255, 255, 1);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 20px;
-    max-width: 20px;
-    min-width: 20px;
-  }
-  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
-    position: absolute;
-    content: "";
-    background: rgba(255, 255, 255, 0.8);
-    height: 16px;
-    width: 16px;
-    margin-top: 4px;
-    margin-left: 2px;
-    -webkit-mask: var(--icon) center/contain no-repeat;
-    mask: var(--icon) center/contain no-repeat;
-  }
-  .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("]):hover::before {
-    background: rgba(255, 255, 255, 1);
-  }
-    .messageContent__21e69 a[href^="#{$link}"]:not([href^="channels"]):not([title*="("])::before {
-      --icon: url("data:image/svg+xml,%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EGitHub%3C/title%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
-      height: 14px;
-      width: 14px;
-      margin-top: 5px;
-      margin-left: 2px;
-    }
-}
-
 // ╔══════════════════════════╦═════════════════════════════════════════════════════════════════════════════[─]═[□]═[×]═╗
 // ║ Base                     ║ Discord                                                                                 ║
 // ╚══════════════════════════╩═════════════════════════════════════════════════════════════════════════════════════════╝
@@ -405,8 +337,12 @@
 // ║ Base                     ║ GitHub                                                                                  ║
 // ╚══════════════════════════╩═════════════════════════════════════════════════════════════════════════════════════════╝
 
-@include link-github(
+@include link-normal(
   "https://github.com",
+  "GitHub",
+  "#18171740",
+  "#181717",
+  "data:image/svg+xml,%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EGitHub%3C/title%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E"
 );
 
 @include link-normal(
